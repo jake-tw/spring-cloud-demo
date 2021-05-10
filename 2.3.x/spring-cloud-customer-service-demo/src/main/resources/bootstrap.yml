@@ -5,8 +5,6 @@ server:
   port: ${p}
 
 spring:
-  profiles:
-    active: test
   application:
     name: customer
     version: 1.0.0
@@ -17,14 +15,7 @@ spring:
 
 eureka:
   client:
+    registry-fetch-interval-seconds: 15 # default 30s
     serviceUrl:
       defaultZone: http://${e}/eureka/
 
----
-
-spring:
-  profiles: test
-  
-eureka:
-  client:
-    registry-fetch-interval-seconds: 5 # default 30s

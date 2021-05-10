@@ -12,6 +12,9 @@ spring:
     version: 1.0.0
     
 eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 15      # default 30s
+    lease-expiration-duration-in-seconds: 45   # default 90s
   client:
     register-with-eureka: false
     fetch-registry: false
@@ -24,8 +27,5 @@ spring:
   profiles: test
   
 eureka:
-  instance:
-    lease-renewal-interval-in-seconds: 5      # default 30s
-    lease-expiration-duration-in-seconds: 10  # default 90s
   server:
     enable-self-preservation: false

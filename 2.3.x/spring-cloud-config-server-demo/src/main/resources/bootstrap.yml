@@ -5,27 +5,19 @@ server:
   port: ${p}
 
 spring:
-  profiles:
-    active: test
   application:
     name: configserver
     version: 1.0.0
   cloud:
     config:
       server:
+        defaultLabel: main # branch name
         git:
-          uri: https://github.com/jake-tw/spring-cloud-demo/tree/master/config-repo
+          uri: https://github.com/jake-tw/spring-cloud-config-repo-demo
+          basedir: target/config
 
 eureka:
   client:
+    registry-fetch-interval-seconds: 15 # default 30s
     serviceUrl:
       defaultZone: http://${e}/eureka/
-
----
-
-spring:
-  profiles: test
-  
-eureka:
-  client:
-    registry-fetch-interval-seconds: 5 # default 30s
