@@ -13,9 +13,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-cloud-eureka-server-demo</module>
+        <module>spring-cloud-eureka-server-demo</module> 
         <module>spring-cloud-config-server-demo</module>
         <module>spring-cloud-customer-service-demo</module>
+        <module>spring-cloud-zuul-gateway-demo</module>
     </modules>
 
 </project>

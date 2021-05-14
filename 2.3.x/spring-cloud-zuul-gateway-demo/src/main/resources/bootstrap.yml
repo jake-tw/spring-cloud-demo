@@ -1,0 +1,27 @@
+e: localhost:9001
+p: 9004
+
+server:
+  port: ${p}
+
+spring:
+  application:
+    name: zuulgateway
+    version: 1.0.0
+  cloud:
+    config:
+      discovery:
+        enabled: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registry-fetch-interval-seconds: 15 # default 30s
+    serviceUrl:
+      defaultZone: http://${e}/eureka/
+
+management:
+  endpoints:
+    web:
+      base-path: /
