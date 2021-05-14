@@ -14,8 +14,14 @@ spring:
         enabled: true
 
 eureka:
+  instance:
+    preferIpAddress: true
   client:
     registry-fetch-interval-seconds: 15 # default 30s
     serviceUrl:
       defaultZone: http://${e}/eureka/
 
+management:
+  endpoints:
+    web:
+      base-path: /
